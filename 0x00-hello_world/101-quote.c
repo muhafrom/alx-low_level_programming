@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <unistd.h>
 /**
  * main - Entry point
  * Description: A c program to print qoute using write function
