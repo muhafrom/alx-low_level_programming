@@ -19,10 +19,10 @@ for (k = 0; k <= 9; ++k)
 for (l = 0; l <= 9; ++l)
 {
 putchar(i + '0');
-putchar(j) + '0';
+putchar(j + '0');
 putchar(' ');
 putchar(j + '0');
-putchar(l '0');
+putchar(l + '0');
 if (i == j && j == k && k == l && l == '9')
 break;
 putchar(',');
