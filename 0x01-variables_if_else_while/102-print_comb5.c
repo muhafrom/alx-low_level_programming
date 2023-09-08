@@ -21,9 +21,9 @@ for (l = 0; l <= 9; ++l)
 putchar(i + '0');
 putchar(j + '0');
 putchar(' ');
-putchar(j + '0');
+putchar(k + '0');
 putchar(l + '0');
-if (i == j && j == k && k == l && l == '9')
+if (i == j && j == k && k == l && l == 9)
 break;
 putchar(',');
 putchar(' ');
