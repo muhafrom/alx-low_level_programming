@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h
+#include <time.h>
 /**
  * main - Assigns a random number to the variable n each time it is executed
  * and prints the last digit of the number stored in the variable n
@@ -29,4 +29,5 @@ else
 {
 printf("and is less than 6 and not 0\n");
 }
+return (0);
 }
