@@ -6,13 +6,17 @@
  */
 int main(void)
 {
-for (char i = '0'; i <= '9'; ++i)
+char i;
+char j;
+char k;
+char l;
+for (i = '0'; i <= '9'; ++i)
 {
-for (char j = '0'; j <= '9'; ++j)
+for (j = '0'; j <= '9'; ++j)
 {
-for (char k = '0'; k <= '9'; ++k)
+for (k = '0'; k <= '9'; ++k)
 {
-for (char l = '0'; l <= '9'; ++l)
+for (l = '0'; l <= '9'; ++l)
 {
 putchar(i);
 putchar(j);
