@@ -8,10 +8,10 @@ int main(void)
 {
 int i;
 int j;
-int k;
-int l;
-for (i = 0; i <= 99; i++) {
-for (j = i; j <= 99; j++) {
+for (i = 0; i <= 99; i++)
+{
+for (j = i; j <= 99; j++)
+{
 putchar((i / 10) + '0');
 putchar((i % 10) + '0');
 putchar(' ');
