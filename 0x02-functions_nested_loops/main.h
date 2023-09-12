@@ -1,6 +1,12 @@
-#ifndef MAIN.H
-#define MAIN.H
-int add(int a, int b);
+#ifndef MAIN_H
+#define MAIN_H
+
 #includ <stdio.h>
+
 int _putchar(char c)
+
+
+
 #endif
+
+
