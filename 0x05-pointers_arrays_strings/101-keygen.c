@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 /**
- * main - generates random valid passwords
+ * main - generates random valid passwords 101-crackme
  * Return: Always 0.
  */
 int main(void)
