@@ -8,16 +8,14 @@
 int main(void)
 {
 int sum = 0;
-int diff;
 char c;
 srand(time(NULL));
 while (sum <= 2645)
 {
 c = rand() % 128;
 sum += c;
-printf("%c", c);
+putchar(c);
 }
-diff = sum - 2772;
-printf("%c", c - diff);
+putchar(2772 - c);
 return (0);
 }
