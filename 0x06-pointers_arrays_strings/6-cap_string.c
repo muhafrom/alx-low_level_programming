@@ -17,8 +17,9 @@ return (c >= 'a' && c <= 'z');
  */
 int is(char c)
 {
+int i;
 char delimiters[] = " \t\n,;.!?\"(){}";
-for (int i = 0; i < 12; i++)
+for (i = 0; i < 12; i++)
 {
 if (c == delimiters[i])
 {
