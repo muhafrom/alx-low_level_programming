@@ -1,4 +1,32 @@
 #include "main.h"
+#include <stdio.h>
+/**
+ * lower - checks if a character is lowercase
+ * @c: character to be checked
+ * Return: 1 if the character is lowercase, 0 otherwise
+ */
+int lower(char c)
+{
+return (c >= 'a' && c <= 'z');
+}
+/**
+ * is - checks if a character is a delimiter
+ * @c: character to be checked
+ *
+ * Return: 1 if the character is a delimiter, 0 otherwise
+ */
+int is(char c)
+{
+char delimiters[] = " \t\n,;.!?\"(){}";
+for (int i = 0; i < 12; i++)
+{
+if (c == delimiters[i])
+{
+return (1);
+}
+}
+return (0);
+}
 /**
  * cap_string - capitalizes all words of a string
  * @s: string to be converted
@@ -6,26 +34,24 @@
  */
 char *cap_string(char *s)
 {
-int i = 0;
-int new_word = 1;
-char separators[] = " \t\n,;.!?\"(){}";
-while (s[i])
+char *ptr = s;
+int found = 1;
+while (*s)
 {
-if (new_word && s[i] >= 'a' && s[i] <= 'z')
+if (is(*s))
 {
-s[i] = s[i] - 'a' + 'A';
-new_word = 0;
+found = 1;
 }
-int j = 0;
-for (j = 0; separators[j]; j++)
+else if (lower(*s) && found)
 {
-if (s[i] == separators[j])
+*s -= 32;
+found = 0;
+}
+else
 {
-new_word = 1;
-break;
+found = 0;
 }
+s++;
 }
-i++;
-}
-return (s);
+return (ptr);
 }
