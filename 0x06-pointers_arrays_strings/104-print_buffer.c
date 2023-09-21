@@ -66,6 +66,7 @@ printHexes(b, start, end);
 printASCII(b, start, end);
 printf("\n");
 }
-} else
+}
+else
 printf("\n");
 }
