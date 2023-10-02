@@ -12,7 +12,6 @@ int i, sum = 0;
 for (i = 1; i < argc; i++)
 {
 char *arg = argv[i];
-// Check if the argument is a positive number
 while (*arg)
 {
 if (*arg < '0' || *arg > '9')
