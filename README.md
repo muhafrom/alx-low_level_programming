@@ -1,1 +1,1 @@
-this is the read me for the args practice
+this is the readme for the c practice and projects
