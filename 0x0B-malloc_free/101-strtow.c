@@ -1,86 +1,69 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdlib.h>
 /**
- * wordlen - calculates the length of a word
- * @str: string
- * Return: length of the word
+ * wrdcnt - counts the number of words in a string
+ * @s: string to count
+ * Return: int of number of words
  */
-int wordlen(char *str)
+int wrdcnt(char *s)
 {
-int len = 0;
-while (*(str + len) && *(str + len) != ' ')
+int i, n = 0;
+for (i = 0; s[i]; i++)
 {
-len++;
+if (s[i] == ' ')
+{
+if (s[i + 1] != ' ' && s[i + 1] != '\0')
+n++;
 }
-return (len);
+else if (i == 0)
+n++;
 }
-/**
- * wordcount - counts the number of words in a string
- * @str: string
- * Return: number of words
- */
-int wordcount(char *str)
-{
-int count = 0, inword = 0;
-while (*str)
-{
-if (*str != ' ')
-{
-str += wordlen(str);
-inword = 0;
-}
-else
-{
-str++;
-if (inword == 0)
-{
-count++;
-inword = 1;
-}
-}
-}
-return (count);
+n++;
+return (n);
 }
 /**
  * strtow - splits a string into words
  * @str: string to split
- * Return: pointer to an array of words (strings)
+ * Return: pointer to an array of strings
  */
 char **strtow(char *str)
 {
-char **words;
-int wc, i, j, wl;
-if (str == NULL || !*str)
+int i, j, k, l, n = 0, wc = 0;
+char **w;
+if (str == NULL || *str == '\0')
 return (NULL);
-wc = wordcount(str);
-if (wc == 0)
+n = wrdcnt(str);
+if (n == 1)
 return (NULL);
-words = malloc((wc + 1) * sizeof(char *));
-if (words == NULL)
+w = (char **)malloc(n *sizeof(char *));
+if (w == NULL)
 return (NULL);
-for (i = 0; i < wc; i++)
+w[n - 1] = NULL;
+i = 0;
+while (str[i])
 {
-while (*str == ' ')
-str++;
-wl = wordlen(str);
-words[i] = malloc((wl + 1) * sizeof(char));
-if (words[i] == NULL)
+if (str[i] != ' ' && (i == 0 || str[i - 1] == ' '))
 {
-while (i >= 0)
+for (j = 1; str[i + j] != ' ' && str[i + j]; j++)
+;
+j++;
+w[wc] = (char *)malloc(j *sizeof(char));
+j--;
+if (w[wc] == NULL)
 {
-free(words[--i]);
-}
-free(words);
+for (k = 0; k < wc; k++)
+free(w[k]);
+free(w[n - 1]);
+free(w);
 return (NULL);
 }
-for (j = 0; j < wl; j++)
-{
-words[i][j] = str[j];
+for (l = 0; l < j; l++)
+w[wc][l] = str[i + l];
+w[wc][l] = '\0';
+wc++;
+i += j;
 }
-words[i][j] = '\0';
-str += wl;
+else
+i++;
 }
-words[wc] = NULL;
-return (words);
+return (w);
 }
