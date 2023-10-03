@@ -52,25 +52,17 @@ char **strtow(char *str)
 char **words;
 int wc, i, j, wl;
 if (str == NULL || !*str)
-{
 return (NULL);
-}
 wc = wordcount(str);
 if (wc == 0)
-{
 return (NULL);
-}
 words = malloc((wc + 1) * sizeof(char *));
 if (words == NULL)
-{
 return (NULL);
-}
 for (i = 0; i < wc; i++)
 {
 while (*str == ' ')
-{
 str++;
-}
 wl = wordlen(str);
 words[i] = malloc((wl + 1) * sizeof(char));
 if (words[i] == NULL)
